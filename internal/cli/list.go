@@ -7,7 +7,7 @@ import (
 	"go.mod/internal/storage"
 )
 
-func RunList() {
+func ShowTaskList() {
 	tasks, err := storage.LoadTasks("tasks.json")
 	if err != nil {
 		log.Fatal(err)

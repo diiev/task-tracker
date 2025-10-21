@@ -7,7 +7,7 @@ import (
 	"go.mod/internal/storage"
 )
 
-func Add(description string) error {
+func AddTask(description string) error {
 
 	if description == "" {
 		return fmt.Errorf("Описание задачи не может быть пустым")
@@ -29,7 +29,7 @@ func Add(description string) error {
 	if err := storage.SaveTask(tasks); err != nil {
 		return fmt.Errorf("Ошибка сохранения файла %w", err)
 	}
-	fmt.Println("Задача добавлена (id: %d): %s\n", newTask.ID, newTask.Description)
+	fmt.Printf("Задача добавлена (id: %d): %s\n", newTask.ID, newTask.Description)
 	return nil
 
 }
