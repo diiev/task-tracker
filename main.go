@@ -11,15 +11,15 @@ func main() {
 	argTackTracker := os.Args
 	if len(argTackTracker) > 1 {
 		if argTackTracker[1] == "add" {
-			fmt.Println("Add tasks")
+			cli.Add(argTackTracker[2])
 		}
 		if argTackTracker[1] == "list" {
-			fmt.Println("Lists of tasks")
+			fmt.Println("Cписок задач:\n--------------------------")
 			cli.RunList()
 		}
 
 	} else {
-		fmt.Println("Arguments not found")
+		fmt.Println("Аргументы не найдены")
 	}
 
 }

@@ -14,14 +14,15 @@ func RunList() {
 	}
 
 	if len(tasks) == 0 {
-		fmt.Println("No tasks found")
+		fmt.Println("Задачи не найдены")
 		return
 	}
 
 	for _, t := range tasks {
 		if t != nil {
-			fmt.Printf("ID: %d\nDescription: %s\nStatus: %s\nCreatedAt: %s\nUpdatedAt: %s\n\n",
+			fmt.Printf("Номер задачи: %d\nОписание: %s\nСтатус: %s\nСоздана: %s\nОбновлено: %s\n",
 				t.ID, t.Description, t.Status, t.CreatedAt.Format("2006-01-02 15:04"), t.UpdatedAt.Format("2006-01-02 15:04"))
 		}
+		fmt.Println("-------------------------------")
 	}
 }

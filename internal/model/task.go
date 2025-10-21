@@ -4,6 +4,8 @@ import (
 	"time"
 )
 
+const FILENAME = "tasks.json"
+
 type TaskStatus string
 
 const (
@@ -13,14 +15,14 @@ const (
 )
 
 type Task struct {
-	ID          int64     `json:"id"`
+	ID          int       `json:"id"`
 	Description string    `json:"description"`
 	Status      string    `json:"status"`
 	CreatedAt   time.Time `json:"createdAt"`
 	UpdatedAt   time.Time `json:"updatedAt"`
 }
 
-func NewTask(id int64, description string) *Task {
+func NewTask(id int, description string) *Task {
 	return &Task{
 		ID:          id,
 		Description: description,
