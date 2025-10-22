@@ -24,6 +24,8 @@ func DeleteTask(id int) error {
 	if !found {
 		return fmt.Errorf("Задача не найдена %w", err)
 	}
-	storage.SaveTask(deleteTasks)
+	if err := storage.SaveTask(deleteTasks); err != nil {
+		return fmt.Errorf("Ошибка сохранения файла %w", err)
+	}
 	return nil
 }

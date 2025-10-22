@@ -22,6 +22,10 @@ func main() {
 			id, _ := strconv.Atoi(argTackTracker[2])
 			cli.DeleteTask(id)
 		}
+		if argTackTracker[1] == "update" {
+			id, _ := strconv.Atoi(argTackTracker[2])
+			cli.UpdateTask(id, argTackTracker[3])
+		}
 
 	} else {
 		fmt.Println("Аргументы не найдены")
