@@ -2,7 +2,7 @@
 
 Простая утилита на **Go** для управления задачами через командную строку.  
 Позволяет добавлять, обновлять, удалять и отмечать задачи в разных статусах — прямо из терминала. 
-https://roadmap.sh/projects/task-tracker
+**Project URL:** [https://github.com/diiev/task-tracker](https://github.com/diiev/task-tracker)
 
 ---
 
