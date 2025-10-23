@@ -8,7 +8,7 @@ import (
 )
 
 func ShowTaskList(status string) error {
-	tasks, err := storage.LoadTasks("tasks.json")
+	tasks, err := storage.LoadTasks(storage.TaskFile)
 	if err != nil {
 		return fmt.Errorf("Ошибка загрузки данных %w", err)
 	}

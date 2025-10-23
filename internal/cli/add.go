@@ -13,7 +13,7 @@ func AddTask(description string) error {
 		return fmt.Errorf("Описание задачи не может быть пустым")
 	}
 
-	tasks, err := storage.LoadTasks("tasks.json")
+	tasks, err := storage.LoadTasks(storage.TaskFile)
 	if err != nil {
 		return fmt.Errorf("Ошибка загрузки файла")
 	}

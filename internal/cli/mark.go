@@ -12,7 +12,7 @@ func MarkTask(id int, status string) error {
 	if status == "" {
 		return fmt.Errorf("Статус должен быть: mark-in-progress или mark-done")
 	}
-	tasks, err := storage.LoadTasks("tasks.json")
+	tasks, err := storage.LoadTasks(storage.TaskFile)
 	if err != nil {
 		return fmt.Errorf("Ошибка загрузки данных %w", err)
 	}

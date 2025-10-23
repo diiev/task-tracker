@@ -8,13 +8,15 @@ import (
 	"go.mod/internal/model"
 )
 
+const TaskFile = "tasks.json"
+
 // SaveTask - сохраняет задачи
 func SaveTask(tasks []*model.Task) error {
 	data, err := json.MarshalIndent(tasks, "", " ")
 	if err != nil {
 		return fmt.Errorf("Ошибка записи JSON файла %w", err)
 	}
-	tmpFile := "tasks.json" + ".tmp"
+	tmpFile := TaskFile + ".tmp"
 
 	f, err := os.Create(tmpFile)
 	if err != nil {
@@ -28,7 +30,7 @@ func SaveTask(tasks []*model.Task) error {
 	if err := f.Close(); err != nil {
 		return fmt.Errorf("Ошибка закртия временного файла")
 	}
-	if err := os.Rename(tmpFile, "tasks.json"); err != nil {
+	if err := os.Rename(tmpFile, TaskFile); err != nil {
 		return fmt.Errorf("Ошибка переименования файла %w", err)
 	}
 	defer func() {
@@ -37,7 +39,7 @@ func SaveTask(tasks []*model.Task) error {
 	return nil
 }
 
-// LoadTasks — загружает задачи из файла tasks.json или создаёт новый, если его нет
+// LoadTasks — загружает задачи из файла  или создаёт новый, если его нет
 func LoadTasks(filename string) ([]*model.Task, error) {
 	if _, err := os.Stat(filename); os.IsNotExist(err) {
 

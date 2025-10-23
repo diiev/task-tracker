@@ -11,7 +11,7 @@ func UpdateTask(id int, newDescription string) error {
 	if newDescription == "" {
 		return fmt.Errorf("Описание не должно быть пустым")
 	}
-	tasks, err := storage.LoadTasks("tasks.json")
+	tasks, err := storage.LoadTasks(storage.TaskFile)
 	if err != nil {
 		return fmt.Errorf("Ошибка загрузки данных %w", err)
 	}
